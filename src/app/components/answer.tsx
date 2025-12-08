@@ -20,7 +20,7 @@ export const Answer: FC<{ markdown: string; sources: Source[] }> = ({
       title={<>Answer</>}
       content={
         markdown ? (
-          <div className="prose prose-sm max-w-full text-base">
+          <div className="max-w-full text-base prose prose-sm">
             <Markdown
               components={{
                 a: ({ node: _, ...props }) => {
@@ -28,28 +28,28 @@ export const Answer: FC<{ markdown: string; sources: Source[] }> = ({
                   const source = sources[+props.href - 1]
                   if (!source) return <></>
                   return (
-                    <span className="inline-block w-4">
+                    <span className="w-4 inline-block">
                       <Popover>
                         <PopoverTrigger asChild>
                           <span
                             title={source.name}
-                            className="inline-block h-6 w-6 origin-top-left scale-[60%] transform cursor-pointer rounded-full bg-zinc-300 text-center font-medium no-underline hover:bg-zinc-400"
+                            className="rounded-full cursor-pointer font-medium bg-zinc-300 h-6 text-center transform origin-top-left w-6 scale-[60%] inline-block no-underline hover:bg-zinc-400"
                           >
                             {props.href}
                           </span>
                         </PopoverTrigger>
                         <PopoverContent
                           align={'start'}
-                          className="flex max-w-screen-md flex-col border bg-white text-xs shadow-transparent"
+                          className="bg-white border flex flex-col max-w-screen-md shadow-transparent text-xs"
                         >
-                          <div className="overflow-hidden text-ellipsis whitespace-nowrap text-[14px]/[22px] font-medium">
+                          <div className="font-medium text-ellipsis text-[14px]/[22px] overflow-hidden whitespace-nowrap">
                             {source.name}
                           </div>
                           <div className="flex gap-4">
                             {source.primaryImageOfPage?.thumbnailUrl && (
                               <div className="flex-none">
                                 <img
-                                  className="h-16 w-16 rounded"
+                                  className="rounded h-16 w-16"
                                   width={source.primaryImageOfPage?.width}
                                   height={source.primaryImageOfPage?.height}
                                   src={source.primaryImageOfPage?.thumbnailUrl}
@@ -57,14 +57,14 @@ export const Answer: FC<{ markdown: string; sources: Source[] }> = ({
                               </div>
                             )}
                             <div className="flex-1">
-                              <div className="line-clamp-4 break-words text-[14px]/[18px] text-zinc-500">
+                              <div className="text-[14px]/[18px] text-zinc-500 break-words line-clamp-4">
                                 {source.snippet}
                               </div>
                             </div>
                           </div>
 
-                          <hr className="my-3 w-full border-t border-gray-200" />
-                          <div className="flex items-center text-[14px]/[18px]">
+                          <hr className="border-t border-gray-200 my-3 w-full" />
+                          <div className="flex text-[14px]/[18px] items-center">
                             <div className="flex-1 overflow-hidden">
                               <div className=" text-blue-500">
                                 <a
@@ -74,11 +74,11 @@ export const Answer: FC<{ markdown: string; sources: Source[] }> = ({
                                   className="flex items-center"
                                 >
                                   <img
-                                    className="mr-1 h-3 w-3"
+                                    className="h-3 mr-1 w-3"
                                     alt={source.url}
                                     src={`https://www.google.com/s2/favicons?domain=${source.url}&sz=${16}`}
                                   />
-                                  <span className="overflow-hidden text-ellipsis whitespace-nowrap text-[14px]/[24px]">
+                                  <span className="text-ellipsis text-[14px]/[24px] overflow-hidden whitespace-nowrap">
                                     {source.url}
                                   </span>
                                   <div className="flex items-center justify-center">
@@ -92,16 +92,16 @@ export const Answer: FC<{ markdown: string; sources: Source[] }> = ({
                                       <path
                                         d="M11 5L4 12"
                                         stroke="#A7A6A1"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                       />
                                       <path
                                         d="M5 4L11.95 4.049L12 11"
                                         stroke="#A7A6A1"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                       />
                                     </svg>
                                   </div>
@@ -121,11 +121,11 @@ export const Answer: FC<{ markdown: string; sources: Source[] }> = ({
           </div>
         ) : (
           <div className="flex flex-col gap-2">
-            <Skeleton className="h-4 max-w-sm bg-zinc-200"></Skeleton>
-            <Skeleton className="h-4 max-w-lg bg-zinc-200"></Skeleton>
-            <Skeleton className="h-4 max-w-2xl bg-zinc-200"></Skeleton>
-            <Skeleton className="h-4 max-w-lg bg-zinc-200"></Skeleton>
-            <Skeleton className="h-4 max-w-xl bg-zinc-200"></Skeleton>
+            <Skeleton className="max-w-sm bg-zinc-200 h-4"></Skeleton>
+            <Skeleton className="max-w-lg bg-zinc-200 h-4"></Skeleton>
+            <Skeleton className="bg-zinc-200 h-4 max-w-2xl"></Skeleton>
+            <Skeleton className="max-w-lg bg-zinc-200 h-4"></Skeleton>
+            <Skeleton className="max-w-xl bg-zinc-200 h-4"></Skeleton>
           </div>
         )
       }

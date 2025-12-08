@@ -1,12 +1,13 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 
 import { Result } from '@/app/components/result'
 import { SearchForm } from '@/app/components/search-form'
 import { Title } from '@/app/components/title'
 
-export default function SearchPage() {
+function Page(){
   const searchParams = useSearchParams()
   const query = decodeURIComponent(searchParams.get('q') || '')
   const rid = decodeURIComponent(searchParams.get('rid') || '')
@@ -23,5 +24,13 @@ export default function SearchPage() {
         <Result key={rid} query={query} rid={rid}></Result>
       </div>
     </div>
+  )
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense>
+      <Page />
+    </Suspense>
   )
 }

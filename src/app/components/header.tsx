@@ -4,9 +4,9 @@ import Image from 'next/image'
 // import SearchLogo from '@/public/search.svg'
 const Header = () => {
   return (
-    <header className="mx-auto max-w-7xl px-4 py-0 sm:px-6">
+    <header className="mx-auto max-w-7xl py-0 px-4 sm:px-6">
       <nav className="flex items-center justify-between ">
-        <div className="flex h-14 items-center text-3xl font-bold text-gray-900">
+        <div className="flex font-bold h-14 text-3xl text-gray-900 items-center">
           <a href="/" className="flex items-center">
             <Image
               src="/search-logo.svg"
@@ -17,11 +17,11 @@ const Header = () => {
             />
           </a>
           <div className="flex hidden items-center md:flex">
-            <span className="mx-6 h-4 border-l border-gray-300"></span>
+            <span className="border-l border-gray-300 h-4 mx-6"></span>
             <a
               href="https://heurist.ai"
               target="_blank"
-              className="flex items-center overflow-hidden text-ellipsis whitespace-nowrap text-base font-normal"
+              className="flex font-normal text-ellipsis text-base items-center overflow-hidden whitespace-nowrap"
             >
               Heurist Protocol
               <svg
@@ -34,29 +34,29 @@ const Header = () => {
                 <path
                   d="M11 5L4 12"
                   stroke="#000"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M5 4L11.95 4.049L12 11"
                   stroke="#000"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </a>
           </div>
         </div>
-        <div className="hidden items-center text-sm md:flex">
+        <div className="text-sm hidden items-center md:flex">
           <a
             href="https://dev-api-form.heurist.ai/"
             target="_blank"
-            className="ml-2 flex flex-nowrap items-center overflow-hidden text-ellipsis whitespace-nowrap rounded-full bg-black px-4 py-1 pr-1 text-white"
+            className="bg-black rounded-full flex flex-nowrap text-ellipsis text-white ml-2 py-1 px-4 pr-1 items-center overflow-hidden whitespace-nowrap"
           >
             Get an API Key
-            <span className="ml-2 rounded-full bg-white p-1">
+            <span className="bg-white rounded-full ml-2 p-1">
               <svg
                 width="16"
                 height="16"
@@ -67,23 +67,23 @@ const Header = () => {
                 <path
                   d="M11 5L4 12"
                   stroke="#000"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M5 4L11.95 4.049L12 11"
                   stroke="#000"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </span>
           </a>
 
-          <span className="mx-6 h-4 border-l border-gray-300"></span>
-          <div className="flex items-center gap-4">
+          <span className="border-l border-gray-300 h-4 mx-6"></span>
+          <div className="flex gap-4 items-center">
             <a
               href="https://github.com/heurist-network/gpt-search-web"
               target="_blank"
